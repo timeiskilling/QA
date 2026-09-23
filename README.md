@@ -73,16 +73,6 @@ bunx playwright install --with-deps chromium
   ```
   *(Or: `bunx playwright test` / `npx playwright test`)*
 
-- **Run tests in interactive UI Mode:**
-  ```bash
-  bun run test:ui
-  ```
-
-- **Run tests in headed browser mode:**
-  ```bash
-  bunx playwright test --headed
-  ```
-
 - **View the HTML test report:**
   ```bash
   bun run test:report
