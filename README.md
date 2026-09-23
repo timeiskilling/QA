@@ -141,7 +141,7 @@ B (invalid status): 200
 Control (valid status): 200
 ```
 
-> 📄 For the complete analysis, refer to [`petstore-api-discrepancy-report.md`](./petstore-api-discrepancy-report.md).
+> 📄 For the complete analysis, refer to [`Reports/petstore-api-discrepancy-report.md`](./Reports/petstore-api-discrepancy-report.md).
 
 ---
 
