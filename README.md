@@ -4,19 +4,18 @@ This repository contains automated UI tests for [SauceDemo](https://www.saucedem
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 1. [Project Overview](#project-overview)
 2. [Prerequisites](#prerequisites)
 3. [Quick Start (Run From Scratch)](#quick-start-run-from-scratch)
 4. [Automated UI Tests (SauceDemo)](#automated-ui-tests-saucedemo)
    - [Tested Scenarios](#tested-scenarios)
-   - [Quality & Implementation Highlights](#quality--implementation-highlights)
-5. [API Discrepancy Verification (`index.ts`)](#api-discrepancy-verification-indexts)
-6. [Notice on `.auth` and `.gitignore`](#notice-on-auth-and-gitignore)
+5. [API Discrepancy Verification (index.ts)](#api-discrepancy-verification-indexts)
+6. [Notice on .auth and .gitignore](#notice-on-auth-and-gitignore)
 
 ---
 
-## 1. Project Overview
+## Project Overview
 
 - **UI Test Framework:** [Playwright](https://playwright.dev/) with TypeScript
 - **Runtime:** [Bun](https://bun.com/) (also compatible with Node.js)
@@ -26,14 +25,14 @@ This repository contains automated UI tests for [SauceDemo](https://www.saucedem
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
 Make sure you have one of the following installed:
 - **[Bun](https://bun.sh/)** (recommended, v1.0+) OR **[Node.js](https://nodejs.org/)** (v18+)
 
 ---
 
-## 3. Quick Start (Run From Scratch)
+## Quick Start (Run From Scratch)
 
 ### Step 1: Clone or Open the Repository
 
@@ -64,7 +63,7 @@ bunx playwright install --with-deps chromium
 
 ---
 
-## 4. Automated UI Tests (SauceDemo)
+## Automated UI Tests (SauceDemo)
 
 ### Running the Tests
 
@@ -73,6 +72,16 @@ bunx playwright install --with-deps chromium
   bun run test
   ```
   *(Or: `bunx playwright test` / `npx playwright test`)*
+
+- **Run tests in interactive UI Mode:**
+  ```bash
+  bun run test:ui
+  ```
+
+- **Run tests in headed browser mode:**
+  ```bash
+  bunx playwright test --headed
+  ```
 
 - **View the HTML test report:**
   ```bash
@@ -113,7 +122,7 @@ The test suite covers the key authentication and user flows for SauceDemo:
 
 ---
 
-## 5. API Discrepancy Verification (`index.ts`)
+## API Discrepancy Verification (index.ts)
 
 `index.ts` contains an automated TypeScript check against the public **Swagger Petstore API** (`https://petstore.swagger.io/v2`).
 
@@ -146,8 +155,12 @@ Control (valid status): 200
 
 ---
 
-## 6. Notice on `.auth` and `.gitignore`
+## Notice on .auth and .gitignore
 
 > ⚠️ **Test Task Note regarding `playwright/.auth`:**
 > 
-> In this repository, the `playwright/.auth/` folder (containing `user.json` test credentials and `user-state.json` storage state) is **intentionally tracked in Git and not excluded via `.gitignore`*
+> In this repository, the `playwright/.auth/` folder (containing `user.json` test credentials and `user-state.json` storage state) is **intentionally tracked in Git and not excluded via `.gitignore`**.
+>
+> **Reason:** This is done intentionally for the assessment review to enable immediate, zero-configuration test execution out-of-the-box without requiring manual credential setup or manual environment variable configuration.
+>
+> In a production environment, sensitive authentication states, tokens, and credentials would be excluded in `.gitignore` and securely supplied via environment secrets or dedicated secret management vaults.
